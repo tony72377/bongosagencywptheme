@@ -1,0 +1,14 @@
+/*
+Theme Name: Bongos Agency Custom Theme
+Theme URI: http://bongos.io
+Description: Coding this theme from scratch because we're developers, not theme installers.
+Version: 1.0.0
+Author: Victor Flores
+Author URI: http://victorhflores.com
+*/
+
+/* General */
+body{
+  font-family:'Open Sans', sans-serif;
+  font-weight:300;
+}
