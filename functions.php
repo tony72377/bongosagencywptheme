@@ -39,5 +39,10 @@ function nodeGarden(){
 }
 nodeGarden();
 
+function materialize(){
+   wp_enqueue_style( 'materialize', Get_template_directory_uri() .'/materialize/css/materialize.css');
+   wp_enqueue_script( 'materialize_js', Get_template_directory_uri() .'/materialize/js/materialize.js');
+}
+add_action( 'wp_enqueue_scripts', 'materialize' );
 
 ?>
