@@ -12,3 +12,18 @@ body{
   font-family:'Open Sans', sans-serif;
   font-weight:300;
 }
+.action{
+  background-color: #4CAF50;
+  padding: 70px;
+}
+.page-footer{
+  background-color:#4CAF50 !important;
+}
+
+.nav-wrapper{
+    background-color:#4CAF50 !important;
+}
+
+body p{
+  font-size: 20px;
+}

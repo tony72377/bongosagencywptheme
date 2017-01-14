@@ -4,8 +4,7 @@ Template Name: Archives
 */
 get_header(); ?>
 
-<div id="container">
-	<div id="content" role="main">
+<div class="container">
 
 		<?php the_post(); ?>
 		<h1 class="entry-title"><?php the_title(); ?></h1>
@@ -22,7 +21,7 @@ get_header(); ?>
 			 <?php wp_list_categories(); ?>
 		</ul>
 
-	</div><!-- #content -->
+
 </div><!-- #container -->
 
 <?php get_sidebar(); ?>
