@@ -45,4 +45,12 @@ function materialize(){
 }
 add_action( 'wp_enqueue_scripts', 'materialize' );
 
+ // navigation menus
+ register_nav_menus(array(
+   'primary' => __('Primary Menu')
+ ));
+
+ register_nav_menus(array(
+   'footer-menu' =>__('Footer Menu')
+ ));
 ?>
