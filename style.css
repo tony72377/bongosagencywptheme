@@ -16,6 +16,15 @@ body{
   font-weight:300;
 }
 
+/* Buttons */
+.btn, .btn-large{
+  background-color:#4CAF50;
+}
+
+.btn:hover, .btn-large:hover{
+  background-color:#333333;
+}
+
 /******************
 Header
 ******************/
@@ -33,7 +42,6 @@ nav .brand-logo{
 nav{
   background-color:#ffffff;
   box-shadow:none;
-  border-bottom:1px solid #efefef;
 }
 
 nav ul a{
@@ -74,6 +82,23 @@ nav .button-collapse{
 }
 
 
+/* Page Introduction */
+
+.pageInto h2.pageTitle{
+  font-size:3em;
+  font-weight:300;
+  text-transform:capitalize;
+  text-align:center;
+}
+
+
+@media (max-width:768px){
+  nav .brand-logo{
+    width:100%;
+    max-width:57px;
+  }
+
+}
 
 
 /****************
@@ -101,6 +126,25 @@ h3.widgetTitle{
   color:#000000;
   text-transform:uppercase;
 }
+
+
+/*****************
+Blog Archive
+*****************/
+
+.blogBtn{
+  margin-top:20px;
+}
+
+.card-title a{
+  color:#000000;
+  transition:ease-in-out 0.2s;
+}
+
+.card-title a:hover{
+  color:#6d6d6d;
+}
+
 
 /****************
 Components

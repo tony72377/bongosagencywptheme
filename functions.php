@@ -22,11 +22,12 @@ function headOptimize(){
 add_action('after_setup_theme', 'headOptimize');
 
 // Stops the formating when HTML is added in the WYSIWYG editor
-function removeWYSIWYGFormat(){
+function WYSIWYGFormat(){
   remove_filter( 'the_content', 'wpautop' );
   remove_filter( 'the_excerpt', 'wpautop' );
+  add_theme_support( 'post-thumbnails' );
 }
-removeWYSIWYGFormat();
+WYSIWYGFormat();
 
 
 // Add any libraries or JS and CSS dependencies here
@@ -59,7 +60,7 @@ add_action('wp_enqueue_scripts', 'themeScripts');
  ));
 
 // Register footer widgets
- function footerSidebars() {
+ function sidebars() {
   // Footer Section 1
   register_sidebar(array(
     'name' => ('Footer Area 1'),
@@ -93,8 +94,16 @@ add_action('wp_enqueue_scripts', 'themeScripts');
     'before_title' => '<h3 class="widgetTitle">',
     'after_title' => '</h3>',
   ));
+  register_sidebar(array(
+    'name' => ('Blog'),
+    'id' => 'blogarchive',
+    'before_widget' => '<div>',
+    'after_widget' => '</div>',
+    'before_title' => '<h3 class="widgetTitle">',
+    'after_title' => '</h3>',
+  ));
  }
- add_action( 'widgets_init', 'footerSidebars' );
+ add_action( 'widgets_init', 'sidebars' );
 
 
 ?>
