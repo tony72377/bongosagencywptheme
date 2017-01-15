@@ -24,11 +24,11 @@ get_header(); ?>
 			if ( comments_open() || get_comments_number() ) :
 				comments_template();
 			endif;
-
+?>
 			// Previous/next post navigation.
       <div class="nav-previous alignleft"><?php next_posts_link( 'Older posts' ); ?></div>
       <div class="nav-next alignright"><?php previous_posts_link( 'Newer posts' ); ?></div>
-
+<?php
 		// End the loop.
 		endwhile;
 		?>
