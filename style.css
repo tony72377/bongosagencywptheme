@@ -7,22 +7,114 @@ Author: Victor Flores
 Author URI: http://victorhflores.com
 */
 
-/* General */
+/*************
+General
+**************/
+
 body{
   font-family:'Open Sans', sans-serif;
   font-weight:300;
 }
+
+/******************
+Header
+******************/
+
+/* Main Navigation */
+.navbar-fixed{
+  z-index:9999;
+}
+
+nav .brand-logo{
+  width:100%;
+  max-width:65px;
+}
+
+nav{
+  background-color:#ffffff;
+  box-shadow:none;
+  border-bottom:1px solid #efefef;
+}
+
+nav ul a{
+  color:#6d6d6d;
+  font-weight:400;
+  font-size:0.9em;
+  letter-spacing:1px;
+}
+
+
+nav ul ul{
+  display:none;
+  position:absolute;
+  background-color:#ffffff;
+}
+
+nav ul li:hover ul{
+  display:block;
+}
+
+/* Mobile Navigation */
+nav .button-collapse{
+  color:#6d6d6d;
+}
+
+#mobile-demo ul{
+  display:block;
+  background-color:#ffffff;
+  position:relative;
+}
+
+
+
+#mobile-demo ul li{
+  background-color:#fcfcfc;
+  padding-left:10px;
+  border:none;
+}
+
+
+
+
+/****************
+Footer
+****************/
+footer.page-footer{
+  background-color:#fcfcfc;
+  color:#6d6d6d;
+}
+
+footer a{
+  color:#6d6d6d;
+}
+
+footer.page-footer .footer-copyright{
+  background-color:#ffffff;
+  font-size:0.8em;
+  color:#6d6d6d;
+  text-align:center;
+}
+
+h3.widgetTitle{
+  font-size:13px;
+  font-weight:400;
+  color:#000000;
+  text-transform:uppercase;
+}
+
+/****************
+Components
+****************/
+
+
+/* Full-width Sections */
+
+
 .action{
   background-color: #4CAF50;
   padding: 70px;
 }
-.page-footer{
-  background-color:#4CAF50 !important;
-}
 
-.nav-wrapper{
-    background-color:#4CAF50 !important;
-}
 
 body p{
   font-size: 20px;
