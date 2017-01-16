@@ -104,5 +104,6 @@ add_action('wp_enqueue_scripts', 'themeScripts');
  }
  add_action( 'widgets_init', 'sidebars' );
 
+<fdfs>
 
 ?>
