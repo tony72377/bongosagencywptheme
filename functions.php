@@ -104,5 +104,34 @@ add_action('wp_enqueue_scripts', 'themeScripts');
  }
  add_action( 'widgets_init', 'sidebars' );
 
+function display_posts() {
+  global $post;
+  $html = "";
+  $my_query = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 4 ));
+  if( $my_query->have_posts() ) : while( $my_query->have_posts() ) : $my_query->the_post();
+
+  $html .= "<div class='row'>";
+   $html .= "<div class='col s12 m4'>";
+    $html .= "<div class='card'>";
+     $html .= "<div class='card-image'>";
+     $html .= "<img src='https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg'>";
+      $html .= "</div>";
+       $html .= "<div class='card-title'>";
+        $html .= "<h2>" . get_the_title() . " </h2>";
+         $html .= "</div>";
+          $html .= "<div class='card-content'>";
+           $html .= "<p>" . get_the_excerpt() . "</p>";
+            $html .= "</div>";
+             $html .= "<a href=\"" . get_permalink() . "\" class=\"button\">Read more</a>";
+              $html .= "</div>";
+               $html .= "</div>";
+                $html .= "</div>";
+
+               endwhile;
+                wp_reset_postdata();
+              endif;
+              return $html;
+             }
+add_shortcode( 'displayposts', 'display_posts' );
 
 ?>
