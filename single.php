@@ -1,40 +1,33 @@
-<?php
-/**
- * The template for displaying all single posts and attachments
- *
- * @package WordPress
- */
+<?php get_header(); ?>
+<?php while ( have_posts() ) : the_post();?>
+	<div class="featuredImage valign-wrapper center" style="background-image:url('<?php the_post_thumbnail_url(); ?>');">
+		<div class="container makeItPop">
+			<h1 class="pageTitle"><?php the_title(); ?></h1>
+			<div class="postAuthor">Written by: <?php the_author(); ?></div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col m8 s12">
+				<?php the_content(); ?>
+				<?php get_template_part( 'content', get_post_format() ); ?>
 
-get_header(); ?>
+				<?php
+				if ( comments_open() || get_comments_number() ) :
+					comments_template();
+				endif;
+				?>
+			</div>
+			<div class="col m4 s12">
+				<?php dynamic_sidebar('Blog'); ?>
+			</div>
+		</div>
 
-	<div id="primary" class="content-area">
-		<did id="main" class="site-main" role="main">
 
-		<?php
-		// Start the loop.
-		while ( have_posts() ) : the_post();
 
-			/*
-			 * Include the post format-specific template for the content. If you want to
-			 * use this in a child theme, then include a file called called content-___.php
-			 * (where ___ is the post format) and that will be used instead.
-			 */
-			get_template_part( 'content', get_post_format() );
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+<?php endwhile; ?>
 
-			// Previous/next post navigation.
-      <div class="nav-previous alignleft"><?php next_posts_link( 'Older posts' ); ?></div>
-      <div class="nav-next alignright"><?php previous_posts_link( 'Newer posts' ); ?></div>
 
-		// End the loop.
-		endwhile;
-		?>
-
-  </div><!-- .site-main -->
-	</div><!-- .content-area -->
-
+  </div>
 <?php get_footer(); ?>

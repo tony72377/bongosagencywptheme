@@ -7,8 +7,210 @@ Author: Victor Flores
 Author URI: http://victorhflores.com
 */
 
-/* General */
+/*************
+General
+**************/
+
 body{
   font-family:'Open Sans', sans-serif;
   font-weight:300;
+}
+
+/* Buttons */
+.btn, .btn-large{
+  background-color:#4CAF50;
+}
+
+.btn:hover, .btn-large:hover{
+  background-color:#333333;
+}
+
+/******************
+Header
+******************/
+
+/* Main Navigation */
+.navbar-fixed{
+  z-index:9999;
+}
+
+.navbar-fixed.transparency{
+    position:absolute;
+}
+
+.navbar-fixed.transparency nav{
+  background-color:rgba(0,0,0,0);
+}
+
+.navbar-fixed.transparency nav a{
+  color:#ffffff
+}
+
+
+nav ul.centered{
+    margin: 0 auto;
+    float: none !important;
+    max-width: 523px;
+    display: block;
+    width: 100%;
+    text-align: center;
+
+}
+
+nav .brand-logo{
+  width:100%;
+  max-width:65px;
+}
+
+nav{
+  background-color:#ffffff;
+  box-shadow:none;
+  transition:ease-in-out 0.2s;
+}
+
+nav ul a{
+  color:#6d6d6d;
+  font-weight:400;
+  font-size:0.9em;
+  letter-spacing:1px;
+}
+
+
+nav ul ul{
+  display:none;
+  position:absolute;
+  background-color:#ffffff;
+}
+
+nav ul li:hover ul{
+  display:block;
+}
+
+/* Mobile Navigation */
+nav .button-collapse{
+  color:#6d6d6d;
+}
+
+#mobile-demo ul{
+  display:block;
+  background-color:#ffffff;
+  position:relative;
+}
+
+
+
+#mobile-demo ul li{
+  background-color:#fcfcfc;
+  padding-left:10px;
+  border:none;
+}
+
+
+/* Page Introduction */
+
+.pageInto h2.pageTitle{
+  font-size:3em;
+  font-weight:300;
+  text-transform:capitalize;
+  text-align:center;
+}
+
+
+@media (max-width:768px){
+  nav .brand-logo{
+    width:100%;
+    max-width:57px;
+  }
+
+}
+
+
+/****************
+Footer
+****************/
+footer.page-footer{
+  background-color:#fcfcfc;
+  color:#6d6d6d;
+}
+
+footer a{
+  color:#6d6d6d;
+}
+
+footer.page-footer .footer-copyright{
+  background-color:#ffffff;
+  font-size:0.8em;
+  color:#6d6d6d;
+  text-align:center;
+}
+
+h3.widgetTitle{
+  font-size:13px;
+  font-weight:400;
+  color:#000000;
+  text-transform:uppercase;
+}
+
+
+/*****************
+Blog Archive
+*****************/
+
+.blogBtn{
+  margin-top:20px;
+}
+
+.card-title a{
+  color:#000000;
+  transition:ease-in-out 0.2s;
+}
+
+.card-title a:hover{
+  color:#6d6d6d;
+}
+
+.featuredImage{
+  min-height:500px;
+  margin-bottom:20px;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center center;
+  color:#ffffff;
+}
+
+.featuredImage:after{
+    width:100%;
+    min-height:500px;
+    content:" ";
+    position:absolute;
+    z-index: 0;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.featuredImage h1{
+  color:#ffffff;
+  margin-bottom:9px;
+}
+
+.makeItPop{
+  z-index:999;
+}
+
+
+/****************
+Components
+****************/
+
+
+/* Full-width Sections */
+
+
+.action{
+  background-color: #4CAF50;
+  padding: 70px;
+}
+
+
+body p{
+  font-size: 20px;
 }
