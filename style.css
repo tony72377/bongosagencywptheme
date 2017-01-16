@@ -32,10 +32,11 @@ Header
 /* Main Navigation */
 .navbar-fixed{
   z-index:9999;
+  position:fixed;
 }
 
 .navbar-fixed.transparency{
-    position:absolute;
+  position:fixed;
 }
 
 .navbar-fixed.transparency nav{
@@ -169,16 +170,18 @@ Blog Archive
   color:#6d6d6d;
 }
 
-.featuredImage{
+/****************
+Single Blog Post
+****************/
+.bngs-singleImage{
   min-height:500px;
-  margin-bottom:20px;
   background-repeat:no-repeat;
   background-size:cover;
   background-position:center center;
   color:#ffffff;
 }
 
-.featuredImage:after{
+.bngs-singleImage:after{
     width:100%;
     min-height:500px;
     content:" ";
@@ -187,15 +190,20 @@ Blog Archive
     background-color: rgba(0,0,0,0.7);
 }
 
-.featuredImage h1{
+.bngs-singleMeta{
+  z-index:999;
+}
+
+.bngs-singleMeta h1{
   color:#ffffff;
   margin-bottom:9px;
 }
 
-.makeItPop{
-  z-index:999;
+.bngs-singleContent{
+  max-width:995px;
+  padding:20px;
+  margin:0 auto;
 }
-
 
 /****************
 Components
