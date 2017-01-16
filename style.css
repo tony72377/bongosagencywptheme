@@ -34,6 +34,29 @@ Header
   z-index:9999;
 }
 
+.navbar-fixed.transparency{
+    position:absolute;
+}
+
+.navbar-fixed.transparency nav{
+  background-color:rgba(0,0,0,0);
+}
+
+.navbar-fixed.transparency nav a{
+  color:#ffffff
+}
+
+
+nav ul.centered{
+    margin: 0 auto;
+    float: none !important;
+    max-width: 523px;
+    display: block;
+    width: 100%;
+    text-align: center;
+
+}
+
 nav .brand-logo{
   width:100%;
   max-width:65px;
@@ -42,6 +65,7 @@ nav .brand-logo{
 nav{
   background-color:#ffffff;
   box-shadow:none;
+  transition:ease-in-out 0.2s;
 }
 
 nav ul a{
@@ -143,6 +167,33 @@ Blog Archive
 
 .card-title a:hover{
   color:#6d6d6d;
+}
+
+.featuredImage{
+  min-height:500px;
+  margin-bottom:20px;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center center;
+  color:#ffffff;
+}
+
+.featuredImage:after{
+    width:100%;
+    min-height:500px;
+    content:" ";
+    position:absolute;
+    z-index: 0;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.featuredImage h1{
+  color:#ffffff;
+  margin-bottom:9px;
+}
+
+.makeItPop{
+  z-index:999;
 }
 
 
