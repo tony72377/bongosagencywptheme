@@ -23,7 +23,7 @@
           <a href="/bongos" class="brand-logo"><img src="http://bongosagency.com/wp-content/uploads/2016/09/blockLogo-1.svg" /></a>
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <!-- Gets Main Navigation -->
-          <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_class' => 'right hide-on-med-and-down')); ?>
+          <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_class' => 'centered hide-on-med-and-down')); ?>
           <!-- Gets Mobile Navigation -->
           <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_class' => 'side-nav', 'menu_id' => 'mobile-demo')); ?>
         </div>

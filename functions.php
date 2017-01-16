@@ -23,8 +23,7 @@ add_action('after_setup_theme', 'headOptimize');
 
 // Stops the formating when HTML is added in the WYSIWYG editor
 function WYSIWYGFormat(){
-  remove_filter( 'the_content', 'wpautop' );
-  remove_filter( 'the_excerpt', 'wpautop' );
+
   add_theme_support( 'post-thumbnails' );
 }
 WYSIWYGFormat();
