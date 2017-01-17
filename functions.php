@@ -33,18 +33,23 @@ WYSIWYGFormat();
 // Add any libraries or JS and CSS dependencies here
 function includeLibraries(){
   // Jquery 2.1.1
-  wp_enqueue_script( 'jQuery', Get_template_directory_uri() .'/assets/js/jquery-2.1.1.min.js');
+
+  wp_deregister_script( 'jquery' );
+  wp_register_script( 'jquery', get_template_directory_uri() .'/assets/js/jquery-2.1.1.min.js', false, NULL, true );
+  wp_enqueue_script( 'jquery' );
   // Materialize CSS -  http://materializecss.com/
   wp_enqueue_style( 'materialize', Get_template_directory_uri() .'/materialize/css/materialize.css');
-  wp_enqueue_script( 'materialize_js', Get_template_directory_uri() .'/materialize/js/materialize.js');
+  wp_enqueue_script( 'materialize_js', Get_template_directory_uri() .'/materialize/js/materialize.js','','',true);
   // NodeGarden JS - http://nodegardenjs.org
+  wp_enqueue_style('nodegarden', Get_template_directory_uri() .'/nodegarden/css/main.css');
+  wp_enqueue_script('nodegardenjs', Get_template_directory_uri() .'/nodegarden/js/main.js','','',true);
 }
 add_action( 'wp_enqueue_scripts', 'includeLibraries' );
 
 // Enqueue any extra custom JS or CSS files here
 function themeScripts(){
   // Navigation
-  wp_enqueue_script( 'Navigation_scripts', Get_template_directory_uri() .'/assets/js/navigation.js');
+  wp_enqueue_script( 'Navigation_scripts', Get_template_directory_uri() .'/assets/js/navigation.js','','',true);
 
 }
 add_action('wp_enqueue_scripts', 'themeScripts');
