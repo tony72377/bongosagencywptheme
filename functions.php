@@ -106,31 +106,33 @@ add_action('wp_enqueue_scripts', 'themeScripts');
 
 function display_posts() {
   global $post;
-  $html = "";
-  $my_query = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 4 ));
+  $tonyShortcode = "";
+  $tonyShortcode .= "<div class='row'>";
+  $my_query = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 2 ));
   if( $my_query->have_posts() ) : while( $my_query->have_posts() ) : $my_query->the_post();
 
-  $html .= "<div class='row'>";
-   $html .= "<div class='col s12 m4'>";
-    $html .= "<div class='card'>";
-     $html .= "<div class='card-image'>";
-     $html .= "<img src='https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg'>";
-      $html .= "</div>";
-       $html .= "<div class='card-title'>";
-        $html .= "<h2>" . get_the_title() . " </h2>";
-         $html .= "</div>";
-          $html .= "<div class='card-content'>";
-           $html .= "<p>" . get_the_excerpt() . "</p>";
-            $html .= "</div>";
-             $html .= "<a href=\"" . get_permalink() . "\" class=\"button\">Read more</a>";
-              $html .= "</div>";
-               $html .= "</div>";
-                $html .= "</div>";
+ $tonyShortcode .= "<div class='col s12 m4'>";
+  $tonyShortcode .= "<div class='card '>";
+    $tonyShortcode .= "<div class='card-image waves-effect waves-block waves-light'>";
+      $tonyShortcode .= "<a href='" . get_permalink() . "'>";
+        $tonyShortcode .= "<img src='" . get_the_post_thumbnail_url() . "' />";
+      $tonyShortcode .= "</a>";
+    $tonyShortcode .= "</div>";
+    $tonyShortcode .= "<div class='card-content'>";
+    $tonyShortcode .= "<div class='card-title'>";
+      $tonyShortcode .= "<h2>" . get_the_title() . " </h2>";
+    $tonyShortcode .= "</div>";
+      $tonyShortcode .= "<p>" . get_the_excerpt() . "</p>";
+    $tonyShortcode .= "<a href='" . get_permalink() . "' class= 'waves-effect waves-light btn blogBtn '>Read more</a>";
+    $tonyShortcode .= "</div>";
+    $tonyShortcode .= "</div>";
+ $tonyShortcode .= "</div>";
 
                endwhile;
                 wp_reset_postdata();
               endif;
-              return $html;
+$tonyShortcode .= "</div>";
+              return $tonyShortcode;
              }
 add_shortcode( 'displayposts', 'display_posts' );
 
