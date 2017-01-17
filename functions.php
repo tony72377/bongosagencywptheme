@@ -137,4 +137,25 @@ $tonyShortcode .= "</div>";
              }
 add_shortcode( 'displayposts', 'display_posts' );
 
+// Adding Case Study post_type
+function postType_caseStudy(){
+
+  $caseStudy_labels = array(
+    'name' => ('Case Study'),
+    'singular_name' => ('Movie'),
+  );
+  register_post_type( 'Case',
+    array(
+      'labels' => $caseStudy_labels,
+      'public' => true,
+      'description' => 'test',
+      'has_archive' => 'cases',
+      'rewrite' => array('slug' => 'cases'),
+      'show_in_nav_menus' => true,
+      'show_in_menu' => true,
+      'show_ui' => true,
+    )
+  );
+}
+add_action('init', 'postType_caseStudy');
 ?>
