@@ -174,6 +174,7 @@ function postType_caseStudy(){
 add_action('init', 'postType_caseStudy');
 
 
+
 // Register Casestudy custom meta fields
 function casestudy_metabox(){
   add_meta_box(
@@ -199,5 +200,31 @@ function casestudy_meta_location(){
   echo '<input type="text" name="_location" id="casestudy_description" value="' . $location .'" />';
 }
 
+
+
+function materialize_pagination() {
+
+global $wp_query;
+
+$big = 999999999; // need an unlikely integer
+
+$pages = paginate_links( array(
+        'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+        'format' => '?paged=%#%',
+        'current' => max( 1, get_query_var('paged') ),
+        'total' => $wp_query->max_num_pages,
+        'next_text' => __('>'),
+        'prev_text' => __('<'),
+        'type'  => 'array',
+    ) );
+    if( is_array( $pages ) ) {
+        $paged = ( get_query_var('paged') == 0 ) ? 1 : get_query_var('paged');
+        echo '<ul class="pagination">';
+        foreach ( $pages as $page ) {
+                echo "<li class='waves-effect'>$page</li>";
+        }
+       echo '</ul>';
+        }
+}
 
 ?>
