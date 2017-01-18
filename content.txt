@@ -1,0 +1,92 @@
+HOME
+
+Bongos Agency is here to help with all your Web development needs
+
+We have experts in the latest web technologies.
+(Angular, SASS, Ember, etc...)
+
+Experienced in development with a multitude of Content Management Systems(CMS)
+(Wordpress, Shopify, Magento, etc...)
+
+
+Whether you're a fellow web agency that needs an extra pair of hands for long or short term projects,
+or a business looking for professional web development, we are the right fit for you.
+
+Creating a custom experience for your one of a kind clients.
+
+Feel free to contact us about any inquires
+or
+Get a free quote
+
+
+WHAT WE DO
+
+We are a software development consultancy for fellow Web and App development agencies.
+Whether your agency needs some help on a one off project or for an extended period of time our
+employees will offer all of their programming services and know how to your business.
+
+//link to appropriate pages or sections
+We have specialists in multiple languages, frameworks, E-commerce development,
+and CMS platforms.
+
+//section with icons and names of things we specialize in
+
+We aim to be a sort of one stop shop for agencies when a project seems like just
+a bit too much to handle or they just need some extra manpower to finish the
+final sprint of a project.
+
+
+
+CONTACT US
+
+Feel Free to contact us via email or phone and we will be happy to answer all
+of your inquires
+// contact form 7 and maybe google maps
+
+
+E=commerce
+Here at bongos agency we build gorgeous professional E-commerce websites
+using CMS platforms like WooCommerce, Magento, and Shopify
+We do our best to ensure the best user experience and the highest possible
+conversion rates on all of our E-Commerce websites
+
+
+
+TECHNOLOGIES
+
+AngularJS
+AngularJS a complete JavaScript-based front-end web application framework maintained by Google.
+It's main use is to create seamless User-Experience driven "single-page applications"
+
+AngularJS two-way data binding is its most notable feature.
+It largely relieves the server backend of templating responsibilities
+
+Due to the fact that it is maintained by google it is made to be very search engine friendly
+
+
+Wordpress
+WordPress is a free and open-source content management system (CMS) based on PHP and MySQL
+wordpress's ease of use for non-programmers is it's greatest trait.
+It currently supports more than 60 million websites around the world
+
+Javascript
+Alongside HTML and CSS, JavaScript is one of the three core technologies of the Internet.
+A majority of websites employ it, and all modern Web browsers support it.
+Programmers also use JavaScript in crafting desktop/mobile applications, video-game development,
+and in server-side network programming.
+
+Magento
+Magento is an open-source e-commerce platform written in PHP
+Magento's market share among the 30 most popular e-commerce platforms is about 29.8%,
+according to the research conducted by AheadWorks in May 2015.
+
+EmberJS
+Ember.js is an open-source JavaScript web framework. It allows developers to create scalable single-page web applications
+by incorporating common idioms and best practices into the framework.
+It has been used to create many popular sites, including Groupon, Twitch.tv, and Chipotle
+Ember has been an early adopter and pioneer of many standards around JavaScript and the web including promises, web components and ES6 syntax.
+
+CSS3
+Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in HTML.
+Along with HTML and JavaScript, CSS is a cornerstone technology used by most websites to create visually engaging webpages
+CSS is designed primarily to enable the separation of the formatting and the content
