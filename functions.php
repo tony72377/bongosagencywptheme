@@ -146,21 +146,58 @@ add_shortcode( 'displayposts', 'display_posts' );
 function postType_caseStudy(){
 
   $caseStudy_labels = array(
-    'name' => ('Case Study'),
-    'singular_name' => ('Movie'),
+    'name' => ('Case Studies'),
+    'singular_name' => ('Case Study'),
   );
+
+  $caseStudy_fields = array(
+      'title',
+      'thumbnail',
+      'editor'
+  );
+
   register_post_type( 'Case',
     array(
       'labels' => $caseStudy_labels,
+      'supports' => $caseStudy_fields,
       'public' => true,
-      'description' => 'test',
+      'description' => 'Case studies are meant for creating a record of new and previous client work done by Bongos.',
       'has_archive' => 'cases',
       'rewrite' => array('slug' => 'cases'),
       'show_in_nav_menus' => true,
       'show_in_menu' => true,
       'show_ui' => true,
+      'register_meta_box_cb' => 'casestudy_meta_location'
     )
   );
 }
 add_action('init', 'postType_caseStudy');
+
+
+// Register Casestudy custom meta fields
+function casestudy_metabox(){
+  add_meta_box(
+    'casestudy_description',
+    'Case Study Description',
+    'casestudy_meta_location',
+    'Case',
+    'normal'
+  );
+}
+add_action( 'add_meta_boxes', 'casestudy_metabox' );
+
+// Create HTML for casestudy custom meta fields
+function casestudy_meta_location(){
+  global $post;
+
+  // Noncename needed to verify where the data originated
+	echo '<input type="hidden" name="eventmeta_noncename" id="eventmeta_noncename" value="' .	wp_create_nonce( plugin_basename(__FILE__) ) . '" />';
+
+	// Get the location data if its already been entered
+  $location = get_post_meta($post->ID, '_location', true);
+  echo '<label>Case study description</label><br />';
+  echo '<input type="text" name="_location" id="casestudy_description" value="' . $location .'" />';
+}
+
+
 ?>
