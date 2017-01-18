@@ -10,7 +10,6 @@ function headOptimize(){
       remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10);
       // Adds admin filters
       add_filter('the_generator', '__return_false');
-      add_filter('show_admin_bar','__return_false');
       // Removes DNS link in header
       remove_action( 'wp_head', 'wp_resource_hints', 2 );
       // Removes Emojis
