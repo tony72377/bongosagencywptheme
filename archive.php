@@ -38,6 +38,7 @@
     <?php dynamic_sidebar('Blog'); ?>
   </div>
   </div>
+  <?php bittersweet_pagination(); ?>
 </div>
 
 <?php get_footer(); ?>
