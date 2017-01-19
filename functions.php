@@ -70,9 +70,9 @@ add_action('wp_enqueue_scripts', 'includeLibraries');
 
 function themeScripts()
 {
-
+  // Full Height Containers
+  wp_enqueue_script('fullheight_scripts', Get_template_directory_uri() . '/assets/js/fullHeight.js', '', '', true);
 	// Navigation
-
 	wp_enqueue_script('Navigation_scripts', Get_template_directory_uri() . '/assets/js/navigation.js', '', '', true);
 }
 
