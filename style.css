@@ -43,10 +43,45 @@ Header
   background-color:rgba(0,0,0,0);
 }
 
-.navbar-fixed.transparency nav a{
-  color:#ffffff
+.navbar-fixed.transparency.light nav a{
+  color:#ffffff;
 }
 
+.navbar-fixed.transparency.dark nav a{
+  color:#000000;
+}
+
+.navbar-fixed.transparency.light #lightLogo{
+  display:block;
+}
+
+.navbar-fixed.transparency.dark #darkLogo{
+  display:block;
+}
+
+.navbar-fixed.transparency.dark #lightLogo{
+  display:none;
+}
+
+.navbar-fixed.transparency.light #darkLogo{
+  display:none;
+}
+
+.navbar-fixed.notransparency.light #lightLogo{
+  display:none;
+}
+
+.navbar-fixed.notransparency.light #darkLogo{
+  display:block;
+}
+
+.navbar-fixed.notransparency.dark #lightLogo{
+  display:none;
+}
+
+.navbar-fixed.notransparency.dark #darkLogo{
+  display:block;
+}
 
 nav ul.centered{
     margin: 0 auto;
@@ -60,7 +95,7 @@ nav ul.centered{
 
 nav .brand-logo{
   width:100%;
-  max-width:65px;
+  max-width:64px;
 }
 
 nav{
@@ -181,13 +216,14 @@ Single Blog Post
   color:#ffffff;
 }
 
-.bngs-singleImage:after{
+.bngs-singleImage .overlay{
     width:100%;
     min-height:500px;
     content:" ";
     position:absolute;
     z-index: 0;
-    background-color: rgba(0,0,0,0.7);
+    background-color:#000000;
+    opacity:0.5;
 }
 
 .bngs-singleMeta{
@@ -219,9 +255,7 @@ Components
 }
 
 
-body p{
-  font-size: 20px;
-}
+
 
 .pagination li span{
   color: #444;

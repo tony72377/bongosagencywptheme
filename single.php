@@ -6,6 +6,7 @@
 			<div class="bngs-authorAvatar"><?php echo get_avatar(get_the_author_meta('ID'), 100); ?></div>
 			<div class="bngs-postAuthor">Written by: <?php the_author(); ?></div>
 		</div>
+		<div class="overlay"></div>
 	</div>
 	<div class="container">
 		<div class="row">

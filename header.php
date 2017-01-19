@@ -16,11 +16,16 @@
 
   </head>
   <body>
+    <?php
+    global $wp_query;
+    $postid = $wp_query->post->ID;
+    wp_reset_query();
+    ?>
     <!-- Navigation -->
-    <div class="navbar-fixed transparency">
+    <div class="navbar-fixed transparency <?php echo get_post_meta( $postid ,'_headerColor', true);?>">
       <nav>
         <div class="nav-wrapper">
-          <a href="/bongos" class="brand-logo"><img src="http://bongosagency.com/wp-content/uploads/2016/09/blockLogo-1.svg" /></a>
+          <a href="/bongos" class="brand-logo"><img id="lightLogo" src="http://bongosagency.com/wp-content/uploads/2016/12/white-logo.svg" /><img id="darkLogo" src="http://bongosagency.com/wp-content/uploads/2016/09/blockLogo-1.svg" /></a>
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <!-- Gets Main Navigation -->
           <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_class' => 'centered hide-on-med-and-down')); ?>
