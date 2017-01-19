@@ -152,7 +152,7 @@
     if (this.nightMode) {
       this.ctx.fillStyle = '#33d142';
     } else {
-      this.ctx.fillStyle = '#000000';
+      this.ctx.fillStyle = '#33d142';
     }
 
     // create nodes
@@ -170,7 +170,7 @@
       this.ctx.fillStyle = '#33d142';
       document.body.classList.add('nightmode');
     } else {
-      this.ctx.fillStyle = '#000000';
+      this.ctx.fillStyle = '#33d142';
       document.body.classList.remove('nightmode');
     }
   };
@@ -229,9 +229,9 @@
         // draw gravity lines
         this.ctx.beginPath();
         if (this.nightMode) {
-          this.ctx.strokeStyle = 'rgba(63,63,63,' + (opacity < 1 ? opacity : 1) + ')';
+          this.ctx.strokeStyle = 'rgba(204,204,204,' + (opacity < 1 ? opacity : 1) + ')';
         } else {
-          this.ctx.strokeStyle = 'rgba(63,63,63,' + (opacity < 1 ? opacity : 1) + ')';
+          this.ctx.strokeStyle = 'rgba(204,204,204,' + (opacity < 1 ? opacity : 1) + ')';
         }
         this.ctx.moveTo(nodeA.x, nodeA.y);
         this.ctx.lineTo(nodeB.x, nodeB.y);
