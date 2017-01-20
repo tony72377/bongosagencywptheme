@@ -10,7 +10,7 @@
 		<div class="container">
 			<h4>Their Problem</h4>
 			<?php $clientName = get_post_meta($post->ID, "_client_name", false); echo $clientName[0];  ?>
-	</div>	
+	</div>
 		<div class="row">
 		<div class="container">
 			<h4>About the Project</h4>
@@ -27,6 +27,21 @@
 			<h4>How we Helped</h4>
 			<?php echo get_post_meta($post->ID, "_solution", true); ?>			</div>
 	</div>
+	<?php
 
+	$images = get_field('casestudy_images');
+
+	if( $images ): ?>
+	    <ul>
+	        <?php foreach( $images as $image ): ?>
+	            <li>
+	                <a href="<?php echo $image['url']; ?>">
+	                     <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" />
+	                </a>
+	                <p><?php echo $image['caption']; ?></p>
+	            </li>
+	        <?php endforeach; ?>
+	    </ul>
+	<?php endif; ?>
 <?php endwhile; ?>
 <?php get_footer(); ?>
