@@ -38,7 +38,7 @@
     <div class="navbar-fixed transparency <?php echo $headerColor; ?> <?php echo $solid; ?>">
       <nav>
         <div class="nav-wrapper">
-          <a href="/bongos" class="brand-logo"><img id="lightLogo" src="http://bongosagency.com/wp-content/uploads/2016/12/white-logo.svg" /><img id="darkLogo" src="http://bongosagency.com/wp-content/uploads/2016/09/blockLogo-1.svg" /></a>
+          <a href="<?php echo site_url(); ?> " class="brand-logo"><img id="lightLogo" src="http://bongosagency.com/wp-content/uploads/2016/12/white-logo.svg" /><img id="darkLogo" src="http://bongosagency.com/wp-content/uploads/2016/09/blockLogo-1.svg" /></a>
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <!-- Gets Main Navigation -->
           <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_class' => 'right hide-on-med-and-down')); ?>
