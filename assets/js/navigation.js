@@ -7,7 +7,7 @@ $(document).ready(function(){
 // Add class to header on scroll
 var scrollPosition = function(){
   var scrollIsTop = $(window).scrollTop();
-  if(scrollIsTop <= 200){
+  if(scrollIsTop <= 60){
     $('.navbar-fixed').removeClass('notransparency');
     $('.navbar-fixed').addClass('transparency');
   }

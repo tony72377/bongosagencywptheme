@@ -38,6 +38,7 @@ add_action('after_setup_theme', 'headOptimize');
 function WYSIWYGFormat()
 {
 	add_theme_support('post-thumbnails');
+
 }
 
 WYSIWYGFormat();
@@ -229,7 +230,7 @@ function casestudy_meta_location()
 	$description = get_post_meta($post->ID, '_description', true);
 	$problem = get_post_meta($post->ID, '_problem', true);
 	$solution = get_post_meta($post->ID, '_solution', true);
-	echo '<style>.wp-editor-tabs{display:none;}.groupForm{padding:50px 20px;}.groupForm:nth-child(odd){background-color:#f6f6f6;}.groupForm h3{margin:0px 0px 15px;}</style>';
+	echo '<style>.groupForm{padding:50px 20px;}.groupForm:nth-child(odd){background-color:#f6f6f6;}.groupForm h3{margin:0px 0px 15px;}</style>';
 	echo '<div class="groupForm"><h3>Client Name</h3>';
 	echo '<input type="text" name="_client_name" style="width:100%;" value="' . $clientName . '"/></div>';
 
@@ -241,7 +242,6 @@ function casestudy_meta_location()
 		'media_buttons' => false,
 		'textarea_name' => '_description',
 		'editor_height' => '200',
-		'teeny' => true,
 	));
 	echo '</div>';
 
@@ -252,7 +252,7 @@ function casestudy_meta_location()
 		'wpautop' => false,
 		'media_buttons' => false,
 		'textarea_name' => '_problem',
-		'editor_height' => '200'
+		'editor_height' => '200',
 	));
 	echo '</div>';
 
@@ -342,22 +342,35 @@ function create_themeOption()
 	echo '<input type="hidden" name="eventmeta_noncename" id="eventmeta_noncename" value="' . wp_create_nonce(plugin_basename(__FILE__)) . '" />';
 
 	// Get the value if its already been entered
-
 	$_headerColor = get_post_meta($post->ID, '_headerColor', true);
-	if ($_headerColor == 'dark') {
+  $_trans = get_post_meta($post->ID, '_trans', true);
+
+  // Returns previously selected value
+  if ($_headerColor == 'dark') { // Header Color Palatte
 		$isDark = 'selected';
-		$isLight = '';
 	}
 	else {
-		$isDark = '';
 		$isLight = 'selected';
 	}
+  if ($_trans == 'on') { // Transparent header
+		$isOn = 'selected';
+	}
+	else {
+		$isOff = 'selected';
+	}
 
+  // HTML Rendered on admin
+  echo '<div class=""><h3>Transparent Header</h3>';
+	echo '<select style="width:100%;" name="_trans">';
+  echo '<option value="off" ' . $isOff . ' >Off</option>';  
+	echo '<option value="on" ' . $isOn . '>On</option>';
+	echo '</select></div>';
 	echo '<div class=""><h3>Light or Dark Header</h3>';
 	echo '<select style="width:100%;" name="_headerColor">';
 	echo '<option value="dark" ' . $isDark . '>Dark</option>';
 	echo '<option value="light" ' . $isLight . '>Light</option>';
 	echo '</select></div>';
+
 }
 
 function save_themeOption($post_id, $post)
@@ -380,6 +393,7 @@ function save_themeOption($post_id, $post)
 	// We'll put it into an array to make it easier to loop though.
 
 	$caseStudy_Meta['_headerColor'] = $_POST['_headerColor'];
+	$caseStudy_Meta['_trans'] = $_POST['_trans'];
 
 	// Add values of $events_meta as custom fields
 
@@ -402,8 +416,31 @@ function save_themeOption($post_id, $post)
 
 add_action('save_post', 'save_themeOption', 1, 2); // save the custom fields
 
-// Archive page pagination
+// Case Study Taxonomies
+function caseStudy_taxonomies(){
+  // Tech taxonomy arguments
+  $tech_args = array(
+    'label' => 'Technologies Used',
+    'public' => true,
+    'publicaly_queryable' => true,
+    'show_ui' => true,
+    'show_admin_column' => true,
+    'hierarchical' => true,
+  );
 
+  // Registers Taxonomy
+  register_taxonomy('technologies', 'case', $tech_args);
+}
+caseStudy_taxonomies();
+
+function enqueue_media_uploader()
+{
+    wp_enqueue_media();
+}
+
+add_action("admin_enqueue_scripts", "enqueue_media_uploader");
+
+// Archive page pagination
 function materialize_pagination()
 {
 	global $wp_query;

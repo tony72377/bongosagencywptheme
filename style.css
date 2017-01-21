@@ -30,6 +30,17 @@ Header
 ******************/
 
 /* Main Navigation */
+
+.on{
+  display:none;
+  height:64px;
+}
+
+.off{
+  display:block;
+  height:64px;
+}
+
 .navbar-fixed{
   z-index:9999;
   position:fixed;
@@ -42,6 +53,11 @@ Header
 .navbar-fixed.transparency nav{
   background-color:rgba(0,0,0,0);
 }
+
+.navbar-fixed.transparency.solid nav{
+  background-color:#ffffff;
+}
+
 
 .navbar-fixed.transparency.light nav a{
   color:#ffffff;
@@ -101,7 +117,7 @@ nav .brand-logo{
 nav{
   background-color:#ffffff;
   box-shadow:none;
-  transition:ease-in-out 0.2s;
+  transition:ease-in-out 0.4s;
 }
 
 nav ul a{
@@ -253,9 +269,6 @@ Components
   background-color: #4CAF50;
   padding: 70px;
 }
-
-
-
 
 .pagination li span{
   color: #444;
